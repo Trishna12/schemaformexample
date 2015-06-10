@@ -47,9 +47,10 @@ app.controller('SampleFormController', function($scope) {
 
         $scope.model = {};
         
-        $scope.submitform = function(form) {       
+        $scope.submitform = function(form) {
+            console.log('Hit Submit Button');
             console.log($scope.model['firstName'] + ' --- ' + $scope.model['lastName'] + ' --- ' +
-                       $scope.model['location']);
+                       $scope.model['location'] + ' --- ' + $scope.model['phone']);
         }
 
 });
