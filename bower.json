@@ -1,6 +1,9 @@
 {
   "name": "bower.json",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "authors": [
+    "Tulasi<tulasi.nadukula@accenture.com>"
+  ],
   "homepage": "https://github.com/Trishna12/schemaformexample",
   "license": "MIT",
   "ignore": [
