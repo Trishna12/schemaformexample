@@ -1,0 +1,21 @@
+<!--<div ng-controller="SampleFormController">
+                <form> 
+        <div sf-schema="sampleSchema" sf-form="sampleForm" sf-model="model"></div>
+        <input type="submit" value="Submit" ng-click="submitform()">
+    </form>
+            </div>-->
+
+<div class="col-md-5 col-md-offset-1">
+        <div ng-controller="SampleFormController">
+            <form
+                    name="exampleForm"
+                    sf-schema="sampleSchema"
+                    sf-options="options"
+                    sf-form="sampleForm"
+                    sf-model="model"
+                    ng-submit="onSubmit(exampleForm)"
+                    >
+            <input type="submit" value="Submit" ng-click="submitform()">
+            </form>
+        </div>
+</div>
