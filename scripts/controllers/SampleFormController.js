@@ -1,5 +1,11 @@
 
-app.controller('SampleFormController', function($scope) {
+app.controller('SampleFormController', function($scope, SharedService, $location, $state) {
+
+
+       if ($location.path() === '/yourdetails') {
+           console.log('in output page');
+           $scope.outputdata = SharedService.getSharedData();
+       }
             
         $scope.sampleSchema = {
             type: "object",
@@ -51,6 +57,17 @@ app.controller('SampleFormController', function($scope) {
             console.log('Hit Submit Button');
             console.log($scope.model['firstName'] + ' --- ' + $scope.model['lastName'] + ' --- ' +
                        $scope.model['location'] + ' --- ' + $scope.model['phone']);
+
+            var dataObj = {};
+            dataObj.firstName = $scope.model['firstName'];
+            dataObj.lastName = $scope.model['lastName'];
+            dataObj.location = $scope.model['location'];
+            dataObj.phone = $scope.model['phone'];
+            if (undefined !== dataObj.firstName) {
+                SharedService.setSharedData(dataObj);
+                $state.go('/output');
+            }
+
         }
 
 });
